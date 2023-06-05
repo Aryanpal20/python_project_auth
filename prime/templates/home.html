@@ -17,13 +17,22 @@
       </div>
     {% elif ass.provider == 'linkedin' %}
       <div class="col-md-6 text-center">
-        <img src="{{ ass.extra_data.picture_url }}" alt="" width="150" height="150" style="border-radius: 50%">
+        <img src="{{ ass.extra_data.picture.data.url }}" alt="" width="150" height="150" style="border-radius: 50%">
       </div>
       <div class="col-md-6 social-container my-2">                 
         <p>You're Signed in via {{ ass.provider }}</p>
         <p>Your Name:  {{ ass.extra_data.name }}</p>
-        <p>Profile URL: <a href="{{ ass.extra_data.public_profile_url }}">link</a></p>
+        <p>Profile URL: <a href="{{ ass.extra_data.profile_url }}">link</a></p>
       </div>
+    {% elif ass.provider == 'google' %}
+    <div class="col-md-6 text-center">
+    <img src="{{ ass.extra_data.picture.data.url }}" alt="" width="150" height="150" style="border-radius: 50%">
+    </div>
+    <div class="col-md-6 social-container my-2">                 
+    <p>You're Signed in via {{ ass.provider }}</p>
+    <p>Your Name:  {{ ass.extra_data.name }}</p>
+    <p>Profile URL: <a href="{{ ass.extra_data.profile_url }}">link</a></p>
+    </div>
     {% endif %}
   {% endfor %}
   <div class="col-sm-12 mt-2 text-center">
