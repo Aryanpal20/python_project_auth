@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prime',
     'social_django',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'auth.urls'
+
+AUTH_USER_MODEL = 'prime.User'
 
 TEMPLATES = [
     {
